@@ -1,0 +1,42 @@
+tabPanel("Theory", value = "Theory",
+         withMathJax(),
+         h4("Temporal Order Jugments (TOJ)"),
+         p("Multisensory integration is often measured in audiovisual tasks where participants are told to
+           press a button as soon as they perceive a given stimulus. Then, reaction times are evaluated. 
+            The TWIN Model is one approach on how to measure the probability of multisensory integration given certain circumstances.
+            In tasks concerning temporal order judgments, the 
+           participant is asked to report which stimulus they perceived first. Here, the visual and auditory stimulus are presented with predefined
+           Stimulus onset asynchrony (SOA, \\(\\tau\\) )."),
+         h4("Relation between RT and TOJ"),
+         h4("References"),  # die habe ich einfach mal auch hier in die App mit aufgenommen, weil wir die Formeln hier ja auch benutzen
+         withTags({
+           ul(
+             li(HTML("Colonius, H., & Diederich, A. (2004). Multisensory interaction
+                     in saccadic reaction time: a time-window-of-integration model.
+                     <em>Journal of cognitive neuroscience, 16</em>(6), 1000-1009."),
+                a("doi:10.1162/0898929041502733", target="_blank",
+                  href="http://www.mitpressjournals.org/doi/abs/10.1162/0898929041502733"),
+                a("[pdf]", target="_blank",
+                  href="http://www.mitpressjournals.org/doi/pdf/10.1162/0898929041502733")
+             ),
+             li(HTML("Diederich, A., & Colonius, H. (2015). The time window of
+                     multisensory integration: Relating reaction times and judgments
+                     of temporal order. <em>Psychological review, 122</em>(2), 232."),
+                a("doi:10.1037/a0038696", target="_blank",
+                  href="http://dx.doi.org/10.1037/a0038696"),
+                a("[pdf]", target="_blank",
+                  href="https://www.uni-oldenburg.de/fileadmin/user_upload/psycho/ag/kogn/colonius/Diederich_colonius2015PsychReview_TWINrelatingRTtoTOJ.pdf")
+             ),
+             li(HTML("Kandil, F. I., Diederich, A., & Colonius, H. (2014). Parameter
+                     recovery for the time-window-of-integration (twin) model of
+                     multisensory integration in focused attention. <em>Journal of
+                     vision, 14</em>(11), 14-14."),
+                a("doi:10.1167/14.11.14", target="_blank",
+                  href="http://jov.arvojournals.org/article.aspx?articleid=2193864"),
+                a("[pdf]", target="_blank",
+                  href="http://jov.arvojournals.org/data/journals/jov/933543/i1534-7362-14-11-14.pdf") 
+             )
+           )
+         })
+         
+)

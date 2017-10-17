@@ -1,14 +1,15 @@
 library(shiny)
+library(shinyBS)
 
 ui <- fluidPage(
-  titlePanel("tojTWIN"),
+  titlePanel("TWIN: Temporal Order Judgment"),
 
   navlistPanel(
-    tabPanel("Theory"),
-    tabPanel("Simulation",
-             h3("Simulation"),
-             h4("Reaction Times"),
-             h4("Temporal Order Judgments")),
-    tabPanel("Estimation")
+    tabPanel(""),
+    source(file.path("ui", "ui_Theory.R"), local = TRUE)$value,
+    
+    source(file.path("ui", "ui_Simulation.R"), local = TRUE)$value,
+   
+    source(file.path("ui", "ui_Estimation.R"), local = TRUE)$value
   )
 )
