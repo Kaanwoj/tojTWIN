@@ -8,8 +8,80 @@ tabPanel("Theory", value = "Theory",
            participant is asked to report which stimulus they perceived first. Here, the visual and auditory stimulus are presented with predefined
            Stimulus onset asynchrony (SOA, \\(\\tau\\) )."),
          h4("Relation between RT and TOJ"),
+         p("For positive and negative values of \\(\\tau\\), each of the following integrals need to be evaluated:
+$$\\begin{equation}
+           \\begin{aligned}
+           p1 &= Pr(A + \\tau < V < A + \\tau + \\omega) = \\int_{0}^{\\infty}\\{F_{V}(a+\\tau+\\omega) - F_{V}(a+\\tau)\\} \\mathrm{d}F_{A}(a), \\\\
+           p2 &= Pr(V < A + \\tau < V + \\omega) = \\int_{0}^{\\infty}\\{F_{A}(v+\\omega-\\tau) - F_{A}(v-\\tau)\\} \\mathrm{d}F_{V}(v), \\\\
+           p3 &= Pr(V < A + \\tau - \\omega) = \\int_{0}^{\\infty}F_{V}(a+\\tau-\\omega)\\mathrm{d}F_{A}(a).
+           \\end{aligned}
+           \\end{equation}$$"),
+        p("For \\(\\tau < 0\\)
+           $$\\begin{equation}
+             p1 =
+               \\begin{cases}
+             \\frac{\\lambda_V}{\\lambda_{V}+\\lambda_{A}}\\{\\text{exp}[\\lambda_{A}(\\tau+\\omega)]-\\text{exp}[\\lambda_{A}\\tau]\\} & \\text{if } \\tau + \\omega < 0;\\\\
+             \\frac{}{}  & \\text{if } \\tau < 0 < \\tau + \\omega;
+             \\end{cases}
+            \\end{equation}$$
+and
+        $$\\begin{equation}
+          p2 = \\frac{\\lambda_V}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[\\lambda_{A}\\tau]-\\text{exp}[-\\lambda_{A}(\\tau-\\omega)]\\};
+          \\end{equation}$$
+and
+        $$\\begin{equation}
+          p3 = \\frac{\\lambda_V}{\\lambda_{V}+\\lambda_A}\\text{exp}[-\\lambda_{A}](\\tau-\\omega)].
+          \\end{equation}$$
+"), 
+p("For \\(\\tau > 0\\)
+          $$\\begin{equation}
+          p1 = \\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[-\\lambda_{V}\\tau]-\\text{exp}[\\-\\lambda_{V}(\\tau+\\omega)]\\},
+          \\end{equation}$$
+and
+          $$\\begin{equation}
+          p2 = 
+          \\begin{cases}
+          \\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[-\\lambda_{V}(\\tau-\\omega)]-\\text{exp}[-\\lambda_{V}\\tau]\\}  & \\text{if } \\tau > \\omega,\\\\
+          \\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{1-\\text{exp}[-\\lambda_{V}\\tau]\\}+\\frac{\\lambda_V}{\\lambda_{V}+\\lambda_A}\\{1-\\text{exp}[-\\lambda_{A}(\\omega-\\tau)]\\}  & \\text{if } \\tau < \\omega,
+          \\end{cases}
+          \\end{equation}$$
+and
+          $$\\begin{equation}
+          p3 =
+          \\begin{cases}
+          \\frac{\\lambda_V}{\\lambda_{V}+\\lambda_A}\\text{exp}[-\\lambda_{A}(\\omega-\\tau)] & \\text{if } \\tau < \\omega,\\\\
+          1-\\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\text{exp}[-\\lambda_{V}(\\tau-\\omega)] & \\text{if } \\tau > \\omega.
+          \\end{cases}
+          \\end{equation}$$
+         
+"),
+         h4("TOJ Probabilities"),
+         p("To compute the TOJ probabilities under the TWIN model, the cases of \\(\\tau\\) < 0 and \\(\\tau\\) > 0 must be considered seperately. 
+           This is denoted here as $$\\Psi^{-}\\tau \\text{ and } \\Psi^{+}\\tau$$."),
+         p("$$\\begin{equation}
+            \\Psi^{-}(\\tau) =
+           \\begin{cases}\\!
+           \\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[\\lambda_{A}(\\tau+\\omega)][1+\\beta(-1+\\text{exp}[2\\lambda_{A}\\omega]))\\} & \\text{if } \\tau + \\omega < 0;\\\\
+           \\begin{aligned}[b]
+           \\frac{1}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[\\lambda_{A}(\\tau+\\omega)]\\lambda_{V}+\\beta(\\lambda_{A}(1-\\text{exp}[-\\lambda_{V}(\\omega+\\tau)])\\\\ +\\lambda_{V}(1-\\text{exp}[\\lambda_{A}(-\\omega+\\tau)]))\\} 
+           \\end{aligned}
+           & \\text{if } 0 < \\tau + \\omega
+           \\end{cases}
+           \\end{equation}$$
+           $$\\begin{equation}
+           \\Psi^{+}(\\tau) =
+           \\begin{cases}\\!
+           1-\\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[-\\lambda_{V}(\\omega+\\tau)][\\beta-(\\beta-1)\\text{exp}[2\\lambda_{V}\\omega]]\\} & \\text{if } \\tau > \\omega;\\\\
+           \\begin{aligned}[b]
+           \\frac{1}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[\\lambda_{A}(-\\omega+\\tau)]\\lambda_{V}+\\beta[\\lambda_{A}(1-\\text{exp}[-\\lambda_{V}(\\omega+\\tau)])\\\\ +\\lambda_{V}(1-\\text{exp}[\\lambda_{A}(-\\omega+\\tau)])]\\} 
+           \\end{aligned}
+           & \\text{if } \\tau < \\omega
+           \\end{cases}
+           \\end{equation}$$"),
+ 
+         
          h4("References"),  # die habe ich einfach mal auch hier in die App mit aufgenommen, weil wir die Formeln hier ja auch benutzen
-         withTags({
+          withTags({
            ul(
              li(HTML("Colonius, H., & Diederich, A. (2004). Multisensory interaction
                      in saccadic reaction time: a time-window-of-integration model.
