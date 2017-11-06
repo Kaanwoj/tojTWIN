@@ -35,7 +35,7 @@ and
 "), 
 p("For \\(\\tau > 0\\)
           $$\\begin{equation}
-          p1 = \\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[-\\lambda_{V}\\tau]-\\text{exp}[\\-\\lambda_{V}(\\tau+\\omega)]\\},
+          p1 = \\frac{\\lambda_A}{\\lambda_{V}+\\lambda_A}\\{\\text{exp}[-\\lambda_{V}\\tau]-\\text{exp}[-\\lambda_{V}(\\tau+\\omega)]\\},
           \\end{equation}$$
 and
           $$\\begin{equation}
