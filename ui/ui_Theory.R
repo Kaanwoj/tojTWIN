@@ -82,6 +82,12 @@ and
            & \\text{if } \\tau < \\omega
            \\end{cases}
            \\end{equation}$$"),
+    h4("Estimation with TOJ"),
+  p("$$\\begin{align}
+    \\text{Objective Function} = \\sum_{\\tau}\\{(\\frac{\\text{mean}[RT_{VA,\\tau}]-\\widehat{E[RT_{VA,\\tau}]}}{\\text{standard error}(mean[RT_{VA,\\tau}])})^2 + 
+    (\\frac{f_{VA,\\tau}-\\widehat{\\Psi(\\tau)}}{\\text{standard error}[f_{VA,\\tau}]})\\}^2
+    \\end{align}$$
+    "),
  
          
          h4("References"),  # die habe ich einfach mal auch hier in die App mit aufgenommen, weil wir die Formeln hier ja auch benutzen
